@@ -12,7 +12,7 @@ Machine Learning Model: Utilizes a RandomForestRegressor for robust stock price 
 
 Hyperparameter Tuning: Includes an option to perform GridSearchCV to find optimal model parameters, aiming to minimize prediction errors (RMSE, MAE).
 
-Performance Metrics: Displays Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2) to evaluate model accuracy.
+Performance Metrics: Displays Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2 ) to evaluate model accuracy.
 
 Actual vs. Predicted Chart: Visualizes the model's predictions against actual historical prices.
 
