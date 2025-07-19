@@ -12,7 +12,9 @@ Machine Learning Model: Utilizes a RandomForestRegressor for robust stock price 
 
 Hyperparameter Tuning: Includes an option to perform GridSearchCV to find optimal model parameters, aiming to minimize prediction errors (RMSE, MAE).
 
-Performance Metrics: Displays Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R2 ) to evaluate model accuracy.
+Performance Metrics: Displays Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R 
+2
+ ) to evaluate model accuracy.
 
 Actual vs. Predicted Chart: Visualizes the model's predictions against actual historical prices.
 
@@ -41,35 +43,35 @@ Follow these steps to get the project up and running on your local machine:
 Clone the Repository (or create the files):
 If you've already initialized a Git repository and pushed to GitHub, you can clone it:
 
-git clone https://github.com/Dbansal06/Stock-Price-Prediction-Streamlit.git
-cd Stock-Price-Prediction-Streamlit
+$ git clone https://github.com/Dbansal06/Stock-Price-Prediction-Streamlit.git
+$ cd Stock-Price-Prediction-Streamlit
 
 If you haven't pushed to GitHub yet, ensure you have a folder containing the three project files: app.py, config.py, and data_processing.py. Navigate into that folder in your terminal.
 
 Create a Virtual Environment (Recommended):
 It's good practice to use a virtual environment to manage project dependencies.
 
-python -m venv .venv
+$ python -m venv .venv
 
 Activate the Virtual Environment:
 
-On Windows:
+On Windows (Command Prompt/PowerShell):
 
-.venv\Scripts\activate
+PS C:\path\to\Stock-Price-Prediction-Streamlit> .venv\Scripts\activate
 
-On macOS/Linux:
+On macOS/Linux (Bash/Zsh):
 
-source .venv/bin/activate
+$ source .venv/bin/activate
 
 Install Dependencies:
 Install all the required Python libraries using pip:
 
-pip install streamlit yfinance pandas scikit-learn matplotlib
+(.venv) $ pip install streamlit yfinance pandas scikit-learn matplotlib
 
 🏃 How to Run the Application
 Once the setup is complete and your virtual environment is activated, you can run the Streamlit application:
 
-streamlit run app.py
+(.venv) $ streamlit run app.py
 
 This command will open a new tab in your default web browser, typically at http://localhost:8501, displaying the Stock Price Prediction Dashboard.
 
@@ -96,7 +98,9 @@ Click "Train Model (No Tuning)" to train the model with default parameters.
 
 Click "Perform Hyperparameter Tuning" to run a Grid Search, which will find the best n_estimators and max_features for your model. This process can take some time but generally leads to better performance.
 
-Prediction and Evaluation: Once the model is trained, it will make predictions on the test set and display RMSE, MAE, and R-squared (R2) metrics.
+Prediction and Evaluation: Once the model is trained, it will make predictions on the test set and display RMSE, MAE, and R-squared (R 
+2
+ ) metrics.
 
 Actual vs. Predicted Prices: A line chart comparing the actual stock prices with your model's predictions on the test set.
 
