@@ -1,120 +1,149 @@
-📈 Stock Price Prediction Dashboard
-This is an interactive web application built with Streamlit that allows users to visualize historical stock prices, train a machine learning model (RandomForestRegressor) for price prediction, evaluate its performance, gain insights into feature importance, and even make simplified future price predictions.
+# 📈 Stock Price Prediction Dashboard
 
-✨ Features
-Interactive Dashboard: User-friendly interface built entirely with Python using Streamlit.
+An interactive **Stock Price Prediction Dashboard** built using **Streamlit** that enables users to analyze historical stock data, engineer meaningful features, train a machine learning model, evaluate its performance, visualize insights, and generate simplified future price predictions.
 
-Historical Data Fetching: Automatically downloads historical stock data using the yfinance library.
+This project demonstrates practical application of **data preprocessing, feature engineering, machine learning, and model evaluation** in a real-world financial use case.
 
-Feature Engineering: Generates essential features like Simple Moving Averages (SMA), Exponential Moving Averages (EMA), Daily Returns, and Lagged Prices.
+---
 
-Machine Learning Model: Utilizes a RandomForestRegressor for robust stock price prediction.
+## 🔍 Project Overview
 
-Hyperparameter Tuning: Includes an option to perform GridSearchCV to find optimal model parameters, aiming to minimize prediction errors (RMSE, MAE).
+The dashboard allows users to:
+- Fetch real-time historical stock data
+- Perform feature engineering on time-series data
+- Train and evaluate a **Random Forest Regression** model
+- Visualize predictions and model insights
+- Generate short-term future price forecasts
 
-Performance Metrics: Displays Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and R-squared (R 
-2
- ) to evaluate model accuracy.
+The application is fully interactive and designed with usability and clarity in mind.
 
-Actual vs. Predicted Chart: Visualizes the model's predictions against actual historical prices.
+---
 
-Model Insights: A dedicated tab to show the importance of different features in the prediction model.
+## ✨ Key Features
 
-Future Prediction: A "Future Prediction" tab allows users to predict stock prices for a specified number of days into the future based on the trained model.
+- **Interactive Web Dashboard**  
+  Built using Streamlit for a clean, user-friendly experience.
 
-🚀 Technologies Used
-Python 3.x
+- **Automated Data Fetching**  
+  Retrieves historical stock price data using the `yfinance` API.
 
-Streamlit: For building the interactive web application.
+- **Feature Engineering**  
+  Includes:
+  - Simple Moving Average (SMA)
+  - Exponential Moving Average (EMA)
+  - Daily Returns
+  - Lagged Closing Prices
 
-yfinance: For fetching historical stock market data.
+- **Machine Learning Model**  
+  Uses `RandomForestRegressor` for robust non-linear price prediction.
 
-Pandas: For data manipulation and analysis.
+- **Hyperparameter Tuning**  
+  Optional **GridSearchCV** to optimize model parameters and reduce error.
 
-Scikit-learn: For machine learning model (RandomForestRegressor) and hyperparameter tuning (GridSearchCV).
+- **Performance Evaluation**  
+  Displays:
+  - Root Mean Squared Error (RMSE)
+  - Mean Absolute Error (MAE)
+  - R² Score
 
-NumPy: For numerical operations.
+- **Visualization**  
+  - Actual vs Predicted price comparison
+  - Feature importance analysis
 
-Matplotlib: For plotting feature importances.
+- **Future Price Prediction**  
+  Predicts stock prices for a user-defined number of future days using an autoregressive approach.
 
-⚙️ Setup and Installation
-Follow these steps to get the project up and running on your local machine:
+---
 
-Clone the Repository (or create the files):
-If you've already initialized a Git repository and pushed to GitHub, you can clone it:
+## 🛠️ Technologies Used
 
-$ git clone https://github.com/Dbansal06/Stock-Price-Prediction-Streamlit.git
-$ cd Stock-Price-Prediction-Streamlit
+- **Python 3.x**
+- **Streamlit** – Web application framework
+- **yfinance** – Stock market data retrieval
+- **Pandas** – Data manipulation and analysis
+- **NumPy** – Numerical computations
+- **Scikit-learn** – Machine learning & hyperparameter tuning
+- **Matplotlib** – Feature importance visualization
 
-If you haven't pushed to GitHub yet, ensure you have a folder containing the three project files: app.py, config.py, and data_processing.py. Navigate into that folder in your terminal.
+---
 
-Create a Virtual Environment (Recommended):
-It's good practice to use a virtual environment to manage project dependencies.
+## ⚙️ Setup & Installation
 
-$ python -m venv .venv
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Dbansal06/Stock-Price-Prediction-Streamlit.git
+cd Stock-Price-Prediction-Streamlit
+```
 
-Activate the Virtual Environment:
+### 2️⃣ Create a Virtual Environment (Recommended)
+```bash
+python -m venv .venv
+```
 
-On Windows (Command Prompt/PowerShell):
+### 3️⃣ Activate the Virtual Environment
+Windows
+```bash
+.venv\Scripts\activate
+```
 
-PS C:\path\to\Stock-Price-Prediction-Streamlit> .venv\Scripts\activate
+macOS / Linux
+```bash
+source .venv/bin/activate
+```
 
-On macOS/Linux (Bash/Zsh):
+4️⃣ Install Dependencies
+```bash
+pip install streamlit yfinance pandas scikit-learn matplotlib
+```
 
-$ source .venv/bin/activate
+▶️ Running the Application
+```bash
+streamlit run app.py
+```
+The application will launch in your browser at:
+```arduino
+http://localhost:8501
+```
 
-Install Dependencies:
-Install all the required Python libraries using pip:
+📊 **Dashboard Usage Guide**
+🔧 Sidebar Inputs
 
-(.venv) $ pip install streamlit yfinance pandas scikit-learn matplotlib
+Stock Ticker (e.g., AAPL, MSFT, GOOG)
+Date Range for historical data
+Number of Lag Days for feature creation
+Random Forest Estimators (model complexity)
 
-🏃 How to Run the Application
-Once the setup is complete and your virtual environment is activated, you can run the Streamlit application:
+📈 **Prediction Dashboard Tab**
 
-(.venv) $ streamlit run app.py
+- Data fetching & preprocessing status
+- Train/Test dataset information
+- Model training options:
+- Train without tuning
+- Train with GridSearchCV
+- Evaluation metrics (RMSE, MAE, R²)
+- Actual vs Predicted price visualization
 
-This command will open a new tab in your default web browser, typically at http://localhost:8501, displaying the Stock Price Prediction Dashboard.
+🔎 **Model Insights Tab**
 
-📊 How to Use the Dashboard
-Sidebar Parameters:
+- Displays Top 10 Feature Importances
+-Helps interpret which features influence predictions most
 
-Stock Ticker: Enter the ticker symbol of the stock you want to analyze (e.g., AAPL, GOOG, MSFT).
+🔮 **Future Prediction Tab**
 
-Start Date / End Date: Select the date range for historical data.
+-Select number of future days
+-Generates predicted prices beyond historical data
 
-Number of Lagged Days for Features: This determines how many previous days' closing prices are used as features for prediction.
+Note: Future predictions are based on a simplified autoregressive approach and are intended for short-term analysis.
 
-Random Forest Estimators: Adjust the number of trees in the Random Forest model.
+⚠️ **Disclaimer**
 
-Prediction Dashboard Tab:
+Stock price prediction is inherently uncertain.
+This project is developed strictly for educational and demonstration purposes.
+Past performance does not guarantee future results.
+Do not use this tool for real financial or investment decisions.
+Always consult a qualified financial advisor before investing.
 
-Data Acquisition & Feature Engineering: Shows the progress of data fetching and feature creation.
-
-Data Preparation: Displays the sizes of your training and test datasets.
-
-Model Training & Hyperparameter Tuning:
-
-Click "Train Model (No Tuning)" to train the model with default parameters.
-
-Click "Perform Hyperparameter Tuning" to run a Grid Search, which will find the best n_estimators and max_features for your model. This process can take some time but generally leads to better performance.
-
-Prediction and Evaluation: Once the model is trained, it will make predictions on the test set and display RMSE, MAE, and R-squared (R 
-2
- ) metrics.
-
-Actual vs. Predicted Prices: A line chart comparing the actual stock prices with your model's predictions on the test set.
-
-Model Insights Tab:
-
-After training a model, this tab will display a bar chart showing the Top 10 Feature Importances. This helps you understand which historical data points (e.g., recent closing prices, moving averages) the model considers most influential for its predictions.
-
-Future Prediction Tab:
-
-Once a model is trained, use the "Number of Future Days to Predict" slider to select how many days into the future you want to forecast.
-
-Click "Predict Future" to see the predicted stock prices extending beyond your historical data.
-
-Note: The future prediction is a simplified autoregressive process. For highly accurate long-term forecasts, more advanced time series forecasting models and methods for generating future features would be necessary.
-
-⚠️ Disclaimer
-Stock price prediction is an inherently challenging task. The models and predictions generated by this dashboard are for educational and demonstration purposes only. Past performance is not indicative of future results. Do not use this tool for actual investment decisions. Investing in the stock market involves significant risk, and you could lose money. Always consult with a qualified financial advisor before making any investment decisions.
+👤 **Author**
+ Deenu
+📌 Aspiring Data Scientist | Machine Learning Enthusiast
+🔗 GitHub: https://github.com/Dbansal06
